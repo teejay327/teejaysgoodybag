@@ -10,13 +10,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Homescreen from './screens/HomeScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={ <App /> }>
-      <Route index={ true } path='/' element={<Homescreen />} />
-
+      <Route index={ true } path='/' element={<HomeScreen />} />
+      <Route path='/product/:id' element={<ProductScreen />} />
     </Route>
   )
 )

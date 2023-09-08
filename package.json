@@ -1,0 +1,23 @@
+{
+  "name": "teejays-goodybag",
+  "version": "2.0.0",
+  "description": "eCommerce app using MERN Stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teejay327/teejaysgoodybag.git"
+  },
+  "author": "Tony Jones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teejay327/teejaysgoodybag/issues"
+  },
+  "homepage": "https://github.com/teejay327/teejaysgoodybag#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
