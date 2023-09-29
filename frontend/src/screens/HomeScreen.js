@@ -1,9 +1,11 @@
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
+import products from '../products';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Homescreen = () => {
+/*
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -14,6 +16,7 @@ const Homescreen = () => {
 
     fetchProducts();
   }, []);
+*/
 
   return (
     <div>
