@@ -1,11 +1,10 @@
+import { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
-import products from '../products';
-import { useEffect, useState } from 'react';
+// import products from '../products';  CHANGED !!!
 import axios from 'axios';
 
 const Homescreen = () => {
-/*
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -16,7 +15,6 @@ const Homescreen = () => {
 
     fetchProducts();
   }, []);
-*/
 
   return (
     <div>
