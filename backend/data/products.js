@@ -46,7 +46,7 @@ const products = [
       'The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music',
     brand: 'Sony',
     category: 'Electronics',
-    price: 399.95,
+    price: 399.00,
     countInStock: 11,
     rating: 5,
     numReviews: 12,
