@@ -4,8 +4,8 @@ import User from '../models/userModel.js';
 // @desc Authorise the user & get the token
 // @route POST /api/users/login
 // @access Public
-const authUser = asyncHandler(async (req,res) => {
-  res.send ('auth user');
+const loginUser = asyncHandler(async (req,res) => {
+  res.send ('log user in');
 });
 
 // @desc Register the user
@@ -43,9 +43,35 @@ const getUsers = asyncHandler(async (req,res) => {
   res.send ('get users');
 });
 
+// @desc Get user by ID
+// @route GET /api/users/:id
+// @access Private/Admin
+const getUserByID = asyncHandler(async (req,res) => {
+  res.send ('get user by ID');
+});
+
 // @desc Delete users
 // @route DELETE /api/users/:id
 // @access Private/Admin
-const deleteUsers = asyncHandler(async (req,res) => {
-  res.send ('delete users');
+const deleteUser = asyncHandler(async (req,res) => {
+  res.send ('delete user');
 });
+
+// @desc Update user
+// @route PUT /api/users/:id
+// @access Private/Admin
+const updateUser = asyncHandler(async (req,res) => {
+  res.send ('update user');
+});
+
+export {
+  loginUser,
+  registerUser,
+  logoutUser,
+  getUserProfile,
+  updateUserProfile,
+  getUsers,
+  deleteUser,
+  getUserByID,
+  updateUser
+}
