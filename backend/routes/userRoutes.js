@@ -1,4 +1,3 @@
-import React from 'react';
 import express from 'express';
 const router = express.Router();
 import {
@@ -11,7 +10,7 @@ import {
   deleteUser,
   getUserByID,
   updateUser
-} from '../controllers/userController';
+} from '../controllers/userController.js';
 
 router.route('/').post(registerUser).get(getUsers);
 router.post('/logout',logoutUser);
