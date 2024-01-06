@@ -40,7 +40,7 @@ const updateUserProfile = asyncHandler(async (req,res) => {
 // @route GET /api/users
 // @access Private/Admin
 const getUsers = asyncHandler(async (req,res) => {
-  res.send ('get users');
+  res.send ('get all users');
 });
 
 // @desc Get user by ID
