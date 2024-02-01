@@ -13,10 +13,17 @@ const LoginScreen = ({ children }) => {
   const [email, setEmail ] = useState('');
   const [password, setPassword ] = useState('');
 
-const submitHandler = (e) => {
-  e.preventDefault();
-  console.log('submit');
-}
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [login, { isLoading }] = useLoginMutation();
+  const { userInfo } = useSelector((state) => state.auth);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('submit');
+  }
+
   return (
     <FormContainer>
       <h1>Sign in</h1>
