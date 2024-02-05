@@ -19,9 +19,25 @@ const LoginScreen = ({ children }) => {
   const [login, { isLoading }] = useLoginMutation();
   const { userInfo } = useSelector((state) => state.auth);
 
-  const submitHandler = (e) => {
+  const { search } = useLocation();
+  const sp = new URLSearchParams(search);
+  const redirect = sp.get('redirect') || '/';
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate(redirect);
+    }
+  }, [userInfo, redirect, navigate])
+
+  const submitHandler = async (e) => {
     e.preventDefault();
-    console.log('submit');
+    try {
+      const res = await login({ email, password }).unwrap();
+      dispatch(setCredentials({ ...res, }));
+      navigate(redirect);
+    } catch (err) {
+      toast.error(err?.data?.message || err.error);
+    }
   }
 
   return (
@@ -48,14 +64,16 @@ const LoginScreen = ({ children }) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary' className='mt-2' >
+        <Button type='submit' variant='primary' className='mt-2' disabled={ isLoading } >
           Sign in
         </Button>
+        { isLoading && <Loader /> }
       </Form>
 
       <Row className='py-3'>
         <Col>
-          New customer? <Link to='/register'>Register</Link>
+          New customer? <Link to={ redirect ? `/register?redirect=${redirect}` :
+           '/register' }>Register</Link>
         </Col>
       </Row>
     </FormContainer>
