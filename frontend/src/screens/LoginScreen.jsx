@@ -42,13 +42,13 @@ const LoginScreen = ({ children }) => {
 
   return (
     <FormContainer>
-      <h1>Sign in</h1>
+      <h1>Sign in here</h1>
       <Form onSubmit={ submitHandler } >
         <Form.Group controlId='email' className='my-3'>
           <Form.Label>Email address</Form.Label>
           <Form.Control 
             type= 'email'
-            placeHolder='Enter email'
+            placeholder='Enter email'
             value={ email }
             onChange={ (e) => setEmail(e.target.value) }
           ></Form.Control>
